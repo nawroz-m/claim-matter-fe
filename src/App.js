@@ -1,11 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
-
+import ArgumentMap from "./components/ArgumentMap.tsx";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="border-2 border-red-300">Welcome </div>
+        <ArgumentMap />
       </header>
     </div>
   );
