@@ -1,11 +1,13 @@
 import React from "react";
 import { ArcherContainer, ArcherElement } from "react-archer";
+import { ExplosionIcon } from "./DynamicSvg.tsx";
 
 const ArgumentMap = () => {
   return (
     <>
-      <div className="absolute left-0 right-0 top-12 z-[2] mx-auto w-fit rounded-sm bg-blue-300 p-5 capitalize">
-        Clami/Matter and case id
+      <div className="absolute left-0 right-0 top-12 z-[2] mx-auto w-fit rounded-sm bg-blue-300 p-5 text-center capitalize">
+        <ExplosionIcon />
+        Claim/Matter and case id
       </div>
       <ArcherContainer noCurves strokeColor="#ccc" strokeWidth={1} className="">
         <div className="flex justify-center gap-12">
