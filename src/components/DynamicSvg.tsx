@@ -28,3 +28,127 @@ export const ExplosionIcon = () => {
     </>
   );
 };
+
+export const MessageIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1rem"
+        height="1rem"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={3}
+          d="M12 11v.01M8 11v.01m8-.01v.01M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z"
+        ></path>
+      </svg>
+    </>
+  );
+};
+
+export const ClaimIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.6rem"
+        height="1.6rem"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinejoin="round"
+            d="M21.25 7.506v6.607a3.963 3.963 0 0 1-3.964 3.965h-2.643l-2.18 2.18a.636.636 0 0 1-.925 0l-2.18-2.18H6.713a3.964 3.964 0 0 1-3.964-3.965V7.506a3.964 3.964 0 0 1 3.964-3.964h10.572a3.964 3.964 0 0 1 3.964 3.964"
+          ></path>
+          <path
+            strokeMiterlimit={10}
+            d="M11.992 7.322v7.081M8.459 10.87h7.082"
+          ></path>
+        </g>
+      </svg>
+    </>
+  );
+};
+
+export const RequestIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.6rem"
+        height="1.6rem"
+        viewBox="0 0 24 24"
+      >
+        <g fill="none" stroke="currentColor" strokeLinecap="round">
+          <path
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21.25 7.506v6.607a3.963 3.963 0 0 1-3.964 3.965h-2.643l-2.18 2.18a.636.636 0 0 1-.925 0l-2.18-2.18H6.713a3.964 3.964 0 0 1-3.964-3.965V7.506a3.964 3.964 0 0 1 3.964-3.964h10.572a3.964 3.964 0 0 1 3.964 3.964"
+          ></path>
+          <path
+            strokeMiterlimit={10}
+            strokeWidth={2}
+            d="M9.539 8.185a2.615 2.615 0 0 1 2.85-1.482a2.54 2.54 0 0 1 1.86 1.325a2.2 2.2 0 0 1-1.283 3.029a1.625 1.625 0 0 0-1.047 1.468v.606"
+          ></path>
+          <path
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M11.898 15.766h.006m-.006 0h.006"
+          ></path>
+        </g>
+      </svg>
+    </>
+  );
+};
+
+export const ObjectiveIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.6rem"
+        height="1.6rem"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M8.586 18L12 21.414L15.414 18H19c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2zM5 4h14v12h-4.414L12 18.586L9.414 16H5z"
+        ></path>
+        <path
+          fill="currentColor"
+          d="M9.707 13.707L12 11.414l2.293 2.293l1.414-1.414L13.414 10l2.293-2.293l-1.414-1.414L12 8.586L9.707 6.293L8.293 7.707L10.586 10l-2.293 2.293z"
+        ></path>
+      </svg>
+    </>
+  );
+};
+
+const HorizontalLineIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0.4em"
+      height="0.4em"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M1 10a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  );
+};
+
+export default HorizontalLineIcon;
