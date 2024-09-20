@@ -1,8 +1,9 @@
 import React from "react";
 import { ArcherContainer, ArcherElement } from "react-archer";
-import { ExplosionIcon } from "./DynamicSvg.tsx";
+import { ExplosionIcon, HyperLinkIcon } from "./DynamicSvg.tsx";
 import ClaimAndObjectivCard from "./ClaimAndObjectiveCard.tsx";
 import { argumentType } from "../utils/claim.js";
+import EvidenceAndCounterCard from "./EvidenceAndCounterCard.tsx";
 
 const data = {
   claim: [
@@ -17,19 +18,22 @@ const data = {
       evidence: [
         {
           title: "Invoice #12345",
-          description: "rrrrrr services provided",
+          description:
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini",
           link: "https://example.com/invoice12345.pdf",
           evidenceId: "evidence-01",
         },
         {
           title: "Contract",
-          description: "343434 outlining payment terms",
+          description:
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini",
           link: "https://example.com/contract_acmeconsulting.pdf",
           evidenceId: "evidence-02",
         },
         {
           title: "Email Communication",
-          description: "E445ggggggg ment reminders",
+          description:
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini",
           link: "https://example.com/email_thread.eml",
           evidenceId: "evidence-03",
         },
@@ -47,7 +51,8 @@ const data = {
       evidence: [
         {
           title: "Invoice #12345",
-          description: "Detailed invoice for services provided",
+          description:
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini",
           link: "https://example.com/invoice12345.pdf",
           evidenceId: "evidence-0",
         },
@@ -79,14 +84,14 @@ const data = {
         {
           title: "Service Quality Report",
           description:
-            "Internal report detailing issues with provided services",
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini",
           link: "https://example.com/quality_report.pdf",
           counterId: "counter-claim-0",
         },
         {
           title: "Communication Log",
           description:
-            "Record of attempts to resolve issues with service provider",
+            "Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerind yönetmelerini Muhakemat nedir? Güvenli, Akıllı ve Entegre Dava Yönetim Sistemi Muhakemat platformu, Ünmaların dava süreçlerinde yönetmelerini Muhakemat platformu, Ün maların davaları süreçlerind yönetmelerini Muhakemat.",
           link: "https://example.com/communication_log.docx",
           counterId: "counter-claim-1",
         },
@@ -130,21 +135,27 @@ const ArgumentMap = () => {
         </div>
 
         <div className="grid grid-cols-2 justify-center gap-20 px-8">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-8">
             {data?.claim?.map((claim: any, index: number) => {
               return (
                 <div
                   key={index}
                   className="grid grid-cols-4 items-center gap-12"
                 >
-                  <div className="col-span-2 flex flex-col gap-12">
+                  <div className="col-span-2 flex flex-col gap-6">
                     {claim?.evidence?.map((evidence: any, idx: number) => {
                       return (
-                        <div key={idx} className="border-2 border-green-50">
-                          <ArcherElement id={evidence?.evidenceId}>
-                            <div>{evidence?.description}</div>
-                          </ArcherElement>
-                        </div>
+                        <ArcherElement key={idx} id={evidence?.evidenceId}>
+                          <span>
+                            <EvidenceAndCounterCard
+                              link={evidence?.link}
+                              number={idx + 1}
+                              title={evidence?.title}
+                              description={evidence?.description}
+                              type={claim?.type}
+                            />
+                          </span>
+                        </ArcherElement>
                       );
                     })}
                   </div>
@@ -183,7 +194,7 @@ const ArgumentMap = () => {
             })}
           </div>
 
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-8">
             {data?.objection?.map((counter: any, index: number) => {
               return (
                 <div
@@ -214,15 +225,21 @@ const ArgumentMap = () => {
                       </span>
                     </ArcherElement>
                   </div>
-                  <div className="col-span-2 flex flex-col gap-12">
+                  <div className="col-span-2 flex flex-col gap-6">
                     {counter?.counterClaim?.map(
                       (counterClaim: any, idx: number) => {
                         return (
-                          <div key={idx} className="border-2 border-green-50">
-                            <ArcherElement id={counterClaim?.counterId}>
-                              <div>{counterClaim?.description}</div>
-                            </ArcherElement>
-                          </div>
+                          <ArcherElement key={idx} id={counterClaim?.counterId}>
+                            <span>
+                              <EvidenceAndCounterCard
+                                link={counterClaim?.link}
+                                number={idx + 1}
+                                title={counterClaim?.title}
+                                description={counterClaim?.description}
+                                type={counter?.type}
+                              />
+                            </span>
+                          </ArcherElement>
                         );
                       },
                     )}

@@ -1,9 +1,10 @@
 import React from "react";
-import HorizontalLineIcon, {
+import {
   ClaimIcon,
   MessageIcon,
   ObjectiveIcon,
   RequestIcon,
+  HorizontalLineIcon,
 } from "./DynamicSvg.tsx";
 import { argumentType } from "../utils/claim.js";
 const ClaimAndObjectivCard = ({ claimObject }: any) => {
