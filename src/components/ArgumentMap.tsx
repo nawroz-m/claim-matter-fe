@@ -2,6 +2,7 @@ import React from "react";
 import { ArcherContainer, ArcherElement } from "react-archer";
 import { ExplosionIcon } from "./DynamicSvg.tsx";
 import ClaimAndObjectivCard from "./ClaimAndObjectiveCard.tsx";
+import { argumentType } from "../utils/claim.js";
 
 const data = {
   claim: [
@@ -103,7 +104,12 @@ const data = {
 const ArgumentMap = () => {
   return (
     <>
-      <ArcherContainer noCurves strokeColor="#ccc" strokeWidth={1} className="">
+      <ArcherContainer
+        noCurves
+        strokeColor="#C5CACE"
+        strokeWidth={1.2}
+        className=""
+      >
         <ArcherElement
           id={`devider-start`}
           relations={[
@@ -116,7 +122,7 @@ const ArgumentMap = () => {
         >
           <div className="h-0.5 w-full"></div>
         </ArcherElement>
-        <div className="relative left-0 right-0 z-[2] mx-auto my-12 w-fit rounded-lg bg-purple-500 px-5 py-4 text-center font-bold text-white">
+        <div className="relative left-0 right-0 z-[2] mx-auto mb-12 mt-5 w-fit rounded-lg bg-purple-500 px-5 py-4 text-center font-bold text-white">
           <span className="flex justify-center">
             <ExplosionIcon />
           </span>
@@ -151,6 +157,14 @@ const ArgumentMap = () => {
                           targetId: evidence?.evidenceId,
                           targetAnchor: "right",
                           sourceAnchor: "left",
+                          style: {
+                            strokeColor:
+                              claim?.type === argumentType.CLAIM
+                                ? "#47945C"
+                                : claim?.type === argumentType.REQUEST
+                                  ? "#3880F2"
+                                  : "#F54834",
+                          },
                         })),
                         {
                           targetId: claim?.claimId,
@@ -184,6 +198,14 @@ const ArgumentMap = () => {
                           targetId: counterClaim?.counterId,
                           targetAnchor: "left",
                           sourceAnchor: "right",
+                          style: {
+                            strokeColor:
+                              counter?.type === argumentType.CLAIM
+                                ? "#47945C"
+                                : counter?.type === argumentType.REQUEST
+                                  ? "#3880F2"
+                                  : "#F54834",
+                          },
                         })),
                       ]}
                     >
