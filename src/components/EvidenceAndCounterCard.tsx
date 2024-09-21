@@ -32,7 +32,7 @@ const EvidenceAndCounterCard = ({ link, number, title, description, type }) => {
           {title}
         </p>
         <p
-          className={`mb-0 max-h-12 overflow-y-auto text-xs font-medium text-black 2xl:text-sm ${type === argumentType.OBJECTIVE ? "text-start" : "text-end"}`}
+          className={`mb-0 max-h-12 overflow-y-auto text-xs font-medium text-black 2xl:max-h-20 2xl:text-sm ${type === argumentType.OBJECTIVE ? "text-start" : "text-end"}`}
         >
           {description}
         </p>

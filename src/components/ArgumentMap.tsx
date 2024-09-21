@@ -171,7 +171,7 @@ const ArgumentMap = () => {
             Client/Matter and <br /> Case ID
           </div>
 
-          <div className="grid grid-cols-2 justify-center gap-20">
+          <div className="mx-12 grid grid-cols-2 justify-center gap-16 2xl:mx-20 2xl:gap-20">
             <div className="flex flex-col gap-8">
               {data?.claim?.map((claim: any, index: number) => {
                 return (
