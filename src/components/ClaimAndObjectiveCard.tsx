@@ -10,7 +10,14 @@ import { argumentType } from "../utils/claim.js";
 const ClaimAndObjectivCard = ({ claimObject }: any) => {
   return (
     <>
-      <div className="relative">
+      <div
+        id={
+          claimObject?.type === argumentType?.OBJECTIVE
+            ? claimObject?.ojbectionId
+            : claimObject?.claimId
+        }
+        className="relative"
+      >
         <span
           className={`absolute -top-7 z-10 ${claimObject?.type === argumentType?.CLAIM ? "right-0 text-green-500" : claimObject?.type === argumentType?.REQUEST ? "right-0 text-blue-500" : "left-0 text-red-500"}`}
         >
@@ -45,12 +52,21 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
           </p>
           <div className="mt-3 flex items-center gap-3">
             <span
-              className={`rounded-md px-2 py-1 text-sm font-medium text-black ${claimObject?.type === argumentType?.CLAIM ? "bg-green-100" : claimObject?.type === argumentType?.REQUEST ? "bg-blue-100" : "bg-red-100"}`}
+              className={`truncate rounded-md px-2 py-1 text-sm font-medium text-black ${claimObject?.type === argumentType?.CLAIM ? "bg-green-100" : claimObject?.type === argumentType?.REQUEST ? "bg-blue-100" : "bg-red-100"}`}
             >
-              <strong>Traraf: </strong> Davaci
+              <strong>Traraf: </strong>{" "}
+              {claimObject?.type === argumentType?.CLAIM ||
+              claimObject?.type === argumentType?.REQUEST
+                ? claimObject?.name?.split(" ")[0]
+                : claimObject?.contactPerson?.split(" ")[0]}
             </span>
-            <span className="rounded-md bg-slate-50 px-2 py-1 text-sm font-medium capitalize text-black">
-              cevab Davaci
+            <span className="truncate rounded-md bg-slate-50 px-2 py-1 text-sm font-medium capitalize text-black">
+              {/* {claimObject?.complainant} */}
+
+              {claimObject?.type === argumentType?.CLAIM ||
+              claimObject?.type === argumentType?.REQUEST
+                ? claimObject?.complainant
+                : claimObject?.respondent}
             </span>
           </div>
         </div>
