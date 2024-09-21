@@ -27,7 +27,11 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
         >
           <span className="mb-1 flex items-center justify-between gap-3">
             <h3 className="text-sm font-semibold 2xl:text-lg">
-              Claim/Alacak Hafta Tatili
+              {claimObject?.type === argumentType?.CLAIM
+                ? "Claim/Alacak Hafta Tatili"
+                : claimObject?.type === argumentType?.REQUEST
+                  ? "Request/Alacak Hafta Tatili"
+                  : "Counter-Claim/Alacak Hafta Tatili"}
             </h3>
             <span
               className={`rounded-sm p-1 ${claimObject?.type === argumentType?.CLAIM ? "bg-green-400" : claimObject?.type === argumentType?.REQUEST ? "bg-blue-400" : "bg-red-400"}`}
@@ -37,10 +41,7 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
           </span>
 
           <p className="max-h-32 overflow-y-auto text-sm font-medium 2xl:max-h-40">
-            ile ilgi (a) kurul kararına istinaden Cankurtaran Mah. 58 ada, 1
-            parselin (a) (b) olarak ifraz edilmesi, için 15.09.2021 tarih ve 852
-            sayılı ilgi (c) Encümen Kararı alınmıştı. Ancak ilgi (d) kayıtlı
-            İstanbul Vakıflar 1. Bölge Müdürlüğü yazısı
+            {claimObject?.description}
           </p>
           <div className="mt-3 flex items-center gap-3">
             <span
