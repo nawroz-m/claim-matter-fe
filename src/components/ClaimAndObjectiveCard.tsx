@@ -61,12 +61,10 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
                 : claimObject?.contactPerson?.split(" ")[0]}
             </span>
             <span className="truncate rounded-md bg-slate-50 px-2 py-1 text-sm font-medium capitalize text-black">
-              {/* {claimObject?.complainant} */}
-
               {claimObject?.type === argumentType?.CLAIM ||
               claimObject?.type === argumentType?.REQUEST
-                ? claimObject?.complainant
-                : claimObject?.respondent}
+                ? claimObject?.complainant?.split(" ").slice(0, 2).join(" ")
+                : claimObject?.respondent?.split(" ").slice(0, 2).join(" ")}
             </span>
           </div>
         </div>

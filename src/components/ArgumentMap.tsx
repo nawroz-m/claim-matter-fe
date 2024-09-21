@@ -145,7 +145,7 @@ const data = {
 const ArgumentMap = () => {
   return (
     <>
-      <div className="flex">
+      <div className="flex overflow-hidden">
         <ArcherContainer
           noCurves
           strokeColor="#C5CACE"

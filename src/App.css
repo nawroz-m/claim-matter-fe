@@ -1,12 +1,15 @@
-.App {
-  text-align: center;
+::-webkit-scrollbar {
+  width: 3.5px;
+  background-color: #f4f7fe;
+  border: 1px solid #ebf0fa;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 99;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+::-webkit-scrollbar-thumb {
+  background: #9aa8d1;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 99;
 }

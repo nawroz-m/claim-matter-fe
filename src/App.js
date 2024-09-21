@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import "./App.css";
 import ArgumentMap from "./components/ArgumentMap.tsx";
 function App() {
   return (

@@ -47,9 +47,7 @@ const ArgumentSidebarCard = ({ data }: any) => {
               <ExplosionIcon color="#957BB4" />
 
               <div
-                // className={`before:bg-purple-500relative w-56 text-nowrap rounded-md bg-purple-200 px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-s-md`}
-
-                className={`relative w-64 cursor-pointer text-nowrap rounded-md bg-purple-200 px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-s-md before:bg-[#957BB4]`}
+                className={`relative w-64 text-nowrap rounded-md bg-purple-200 px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-s-md before:bg-[#957BB4]`}
               >
                 Client/Matter and Case ID
               </div>
@@ -88,7 +86,8 @@ const ArgumentSidebarCard = ({ data }: any) => {
                     )}
                     <a href={`#${claims?.claimId}`}>
                       <div
-                        className={`relative w-[${widths?.claimWidth * 16}px] cursor-pointer text-nowrap rounded-md px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-s-md ${claims?.assignedObjection.length > 0 ? "-mr-2" : ""} ${claims?.type === argumentType?.CLAIM ? "bg-green-200 before:bg-green-500" : claims?.type === argumentType?.REQUEST ? "bg-blue-200 before:bg-blue-500" : "bg-red-200 before:bg-red-500"}`}
+                        style={{ width: `${widths?.claimWidth * 16}px` }}
+                        className={`relative cursor-pointer text-nowrap rounded-md px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-s-md ${claims?.assignedObjection.length > 0 ? "-mr-2" : ""} ${claims?.type === argumentType?.CLAIM ? "bg-green-200 before:bg-green-500" : claims?.type === argumentType?.REQUEST ? "bg-blue-200 before:bg-blue-500" : "bg-red-200 before:bg-red-500"}`}
                       >
                         {claims?.name?.split(" ")[0]}
                         (1)
@@ -97,7 +96,8 @@ const ArgumentSidebarCard = ({ data }: any) => {
                     {claims?.assignedObjection.length > 0 && (
                       <a href={`#${claims?.assignedObjection?.[0]}`}>
                         <div
-                          className={`relative w-[${widths?.objectionWidth * 16}px] cursor-pointer text-nowrap rounded-md bg-red-100 px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-md before:bg-[#be8c9c]`}
+                          style={{ width: `${widths?.objectionWidth * 16}px` }}
+                          className={`relative cursor-pointer text-nowrap rounded-md bg-red-100 px-4 py-0.5 before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:rounded-md before:bg-[#be8c9c]`}
                         >
                           Idd ({claims?.assignedObjection.length})
                         </div>
