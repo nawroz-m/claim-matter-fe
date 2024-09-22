@@ -12,9 +12,10 @@ interface ARGUMENTMAP {
 }
 const ArgumentMap = () => {
   const [data, setData] = useState<ARGUMENTMAP>({ claim: [], objection: [] });
+  const [isLoading, setIsLoading] = useState(true);
   const fetchArgumentData = async () => {
     const response: any = await getArgumentData({ params: "" });
-    if (response?.success) setData(response?.data);
+    response?.success ? setData(response?.data) : setIsLoading(false);
   };
   useEffect(() => {
     fetchArgumentData();
@@ -179,7 +180,7 @@ const ArgumentMap = () => {
         </div>
       ) : (
         <div className="my-32 text-center text-3xl font-bold">
-          No data available yet.
+          {isLoading ? "Good things take time 🌀" : "No data available yet."}
           <img
             src="https://tenor.com/view/robot-excited-dance-delight-happy-gif-16480760688547563830.gif"
             width={400}

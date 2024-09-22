@@ -20,6 +20,13 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
       >
         <span
           className={`absolute -top-7 z-10 ${claimObject?.type === argumentType?.CLAIM ? "right-0 text-green-500" : claimObject?.type === argumentType?.REQUEST ? "right-0 text-blue-500" : "left-0 text-red-500"}`}
+          title={
+            claimObject?.type === argumentType?.CLAIM
+              ? "Claim"
+              : claimObject?.type === argumentType?.REQUEST
+                ? "Request"
+                : "Objection"
+          }
         >
           {claimObject?.type === argumentType?.CLAIM ? (
             <ClaimIcon />
@@ -38,7 +45,7 @@ const ClaimAndObjectivCard = ({ claimObject }: any) => {
                 ? "Claim/Alacak Hafta Tatili"
                 : claimObject?.type === argumentType?.REQUEST
                   ? "Request/Alacak Hafta Tatili"
-                  : "Counter-Claim/Alacak Hafta Tatili"}
+                  : "Objection/ Alacak Hafta Tatili"}
             </h3>
             <span
               className={`rounded-sm p-1 ${claimObject?.type === argumentType?.CLAIM ? "bg-green-400" : claimObject?.type === argumentType?.REQUEST ? "bg-blue-400" : "bg-red-400"}`}
