@@ -33,7 +33,7 @@ const ArgumentSidebarCard = ({ data }: any) => {
   return (
     <>
       <div
-        className="relative me-5 mt-12 flex flex-col gap-5 bg-slate-100 py-8 opacity-50 hover:opacity-100"
+        className="relative me-5 mt-12 flex flex-col gap-4 bg-slate-100 py-8 opacity-50 hover:opacity-100"
         onMouseEnter={() => setIsArgumentSidePanlHovered(true)}
         onMouseLeave={() => setIsArgumentSidePanlHovered(false)}
       >
