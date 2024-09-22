@@ -1,4 +1,4 @@
-export const url = "http://localhost:9000";
+export const url = "https://am-backend-henna.vercel.app";
 
 export const getArgumentData = async ({ params = "" }) => {
   const response = await fetch(`${url}/${params}`, {
