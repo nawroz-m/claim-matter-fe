@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Argument Map simple UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Packages used in this app
+
+`typescript` for static type checking, ensuring that code is written with correct types and preventing potential runtime errors
+`ajv` a JSON schema validator not necessary but it comes by default with react v-18
+`react-archer` to draw arrows between DOM elements
+`prettier` to format codes
+`tailwindcss` CSS framework to design and maintain stylesheets
+`prettier-plugin-tailwindcss` It's a plugin that integrates Tailwind CSS with Prettier, allowing for consistent formatting of Tailwind CSS classes.
 
 ## Available Scripts
 
