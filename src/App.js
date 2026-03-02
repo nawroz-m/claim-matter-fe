@@ -1,10 +1,6 @@
 import { Suspense } from "react";
 import "./App.css";
 import ArgumentMap from "./components/ArgumentMap.tsx";
-import { ArcherContainer, ArcherElement } from "react-archer";
-import ClaimAndObjectivCard from "./components/ClaimAndObjectiveCard.tsx";
-import EvidenceAndCounterCard from "./components/EvidenceAndCounterCard.tsx";
-import { argumentType } from "./utils/claim.js";
 const arr = [
   {
     claim: {
